@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.3
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ./es_data:/usr/share/elasticsearch/data
+    #   - ./init.sh:/usr/local/bin/init.sh
+    # command: ["/bin/bash", "/usr/local/bin/init.sh"]
+
+  kibana:
+    image: kibana:7.17.3
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.15.0
+    container_name: logstash
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_LOG_OUTPUT=file
+      - N8N_LOG_FILE_LOCATION=/var/log/n8n/n8n.log
+      - N8N_LOG_LEVEL=info
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin
+      - N8N_HOST=n8n
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+      - ./n8n_logs:/var/log/n8n
+
+# volumes:
+#   es_data:
+#   n8n_data:
