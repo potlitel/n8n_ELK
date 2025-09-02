@@ -1,21 +1,21 @@
- # n8n-ELK-Integration
+ # 🔥n8n-ELK-Integration
 
-## Descripción
+## ✍️Descripción
 
 Este repositorio contiene una guía y ejemplos para implementar n8n junto con ELK (Elasticsearch, Logstash y Kibana). n8n es una plataforma de automatización de flujos de trabajo que permite integrar diferentes aplicaciones y servicios de manera sencilla. La integración con ELK permite la recopilación, análisis y visualización de datos generados por los flujos de trabajo automatizados.
 
-## Características
+## ✨Características
 
 - **Automatización de Flujos de Trabajo**: Utiliza n8n para crear flujos de trabajo que interactúan con servicios de ELK.
 - **Visualización de Datos**: Configura Kibana para visualizar los datos procesados por Elasticsearch.
 - **Monitoreo y Análisis**: Implementa Logstash para el procesamiento de datos en tiempo real.
 
-## Requisitos
+## ✅Requisitos
 
 - **n8n**: Asegúrate de tener n8n instalado y funcionando. Puedes encontrar la documentación oficial [aquí](https://docs.n8n.io).
 - **ELK Stack**: Debes tener Elasticsearch, Logstash y Kibana instalados. Consulta la [documentación de ELK](https://www.elastic.co/guide/en/elastic-stack/current/index.html) para más detalles.
 
-## Instalación
+## 🛠️Instalación
 
 ### 1. **Clona el repositorio**:
    ```bash
