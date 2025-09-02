@@ -75,12 +75,31 @@ Debe obtener una salida similar a la siguiente:
         RawContentLength  : 467
 ```
 
+```bash
+curl http://localhost:9200/_cat/indices?v
+```
+
+```bash
+ curl http://localhost:9200/_cluster/allocation/explain
+```
+
+```bash
+ curl http://localhost:9200/_cat/nodes?v
+```
+
+```bash
+ curl http://localhost:9200/_cat/recovery/event_tracking?v
+```
+
+
+
 ### 4. Kibana: Configura un patrón de índice en Kibana para visualizar los logs:
 
-    Asegúrate de que esté funcionando y accesible en http://localhost:5601.
-    4.1 Ve a Management > Index Patterns.
-    4.2 Crea un nuevo patrón de índice con el nombre n8n-logs-*.
-    4.3 Configura el campo de tiempo (timestamp) para habilitar la visualización cronológica.
+Asegúrate de que esté funcionando y accesible en http://localhost:5601.
+
+#### 4.1 Ve a Management > Index Patterns.
+#### 4.2 Crea un nuevo patrón de índice con el nombre n8n-logs-*.
+#### 4.3 Configura el campo de tiempo (timestamp) para habilitar la visualización cronológica.
 
 ### 5.  Verificar el flujo de logs
 
