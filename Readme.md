@@ -35,17 +35,17 @@ Este repositorio contiene una guía y ejemplos para implementar n8n junto con EL
 
 ### 3. Configurar Elasticsearch y Kibana
 
-    Elasticsearch: Asegúrate de que Elasticsearch esté funcionando y accesible en http://localhost:9200.
+Elasticsearch: Asegúrate de que Elasticsearch esté funcionando y accesible en http://localhost:9200.
 
-    To check if Elasticsearch is running execute the following command in the terminal:
+To check if Elasticsearch is running execute the following command in the terminal:
 
-    ```bash
-        curl http://localhost:9200/_cluster/health?pretty
-    ```
+```bash
+curl http://localhost:9200/_cluster/health?pretty
+```
 
-    Debe obtener una salida similar a la siguiente:
+Debe obtener una salida similar a la siguiente:
 
-    ```bash
+```bash
         StatusCode        : 200
         StatusDescription : OK
         Content           : {
@@ -73,7 +73,7 @@ Este repositorio contiene una guía y ejemplos para implementar n8n junto con EL
         Links             : {}
         ParsedHtml        : System.__ComObject
         RawContentLength  : 467
-    ```
+```
 
 ### 4. Kibana: Configura un patrón de índice en Kibana para visualizar los logs:
 
