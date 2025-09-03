@@ -2,3 +2,4 @@
 es_data/
 n8n_data/
 n8n_logs/
+.env
